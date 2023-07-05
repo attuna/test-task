@@ -5,7 +5,7 @@ def pytest_addoption(parser):
     parser.addoption(
         "--lang",
         action="store",
-        default="https://www.limango.pl/",
+        default="pl",
         help="Language for the test",
         choices=("pl", "de", "nl"),
     )
