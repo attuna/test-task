@@ -20,6 +20,8 @@ class NegativeLoginTestCase(BaseTestCase):
         login_page.enter_username(username)
         login_page.enter_password(password)
         login_page.submit_login_form()
+        messages = login_page.load_messages()
+        self.assertEqual(login_page.is_password_error_message_displayed(), messages['invalid_login_error_message'])
 
 
 if __name__ == '__main__':

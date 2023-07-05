@@ -1,3 +1,6 @@
+import json
+import os
+
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 
@@ -9,11 +12,15 @@ class LoginPage:
     def load(self, base_url):
         self.driver.get(base_url)
 
+    def load_messages(self):
+        with open(f"messages/messages_{os.getenv('lang')}.json", "r") as f:
+            return json.load(f)
+
     def click_login_button(self):
         try:
-            register_link = self.driver.find_element(By.XPATH,
+            login_link = self.driver.find_element(By.XPATH,
                                                      '//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div[2]/a')
-            register_link.click()
+            login_link.click()
         except NoSuchElementException:
             raise Exception("Login link not found")
 
