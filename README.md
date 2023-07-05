@@ -22,14 +22,20 @@ git clone https://github.com/attuna/test-task.git
 cd test-task/
 ```
 
+3. Create and activate a virtual environment (optional but recommended):
 
-3. Install the required packages:
+```bash
+python -m venv venv
+source venv/bin/activate 
+```
+
+4. Install the required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Run the tests. You can run the tests with the following options:
+5. Run the tests. You can run the tests with the following options:
 
  - Polish
 
